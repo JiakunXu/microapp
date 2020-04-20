@@ -90,5 +90,14 @@ Page({
         util.showModel('请求失败', error)
       }
     });
+  },
+  onClick: function (event) {
+    const {
+      id
+    } = event.currentTarget.dataset;
+
+    tt.navigateTo({
+      url: '/pages/web/web?src=' + encodeURIComponent("https://baidu.com/s?wd=" + id)
+    })
   }
 })

@@ -1,7 +1,7 @@
 <view class="container">
 	<van-list loading="{{ loading }}" finished="{{ finished }}">
 		<block tt:for="{{ list }}" tt:for-index="idx" tt:for-item="item" tt:key="id">
-			<van-cell title="{{ item }}" label="{{ idx }}" />
+			<van-cell title="{{ item }}" label="{{ idx }}" data-id="{{ idx }}" bind:click="onClick" />
 		</block>
 	</van-list>
 </view>
