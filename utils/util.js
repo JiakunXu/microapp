@@ -47,23 +47,23 @@ const b = amount => {
 }
 
 // 显示繁忙提示
-var showBusy = text => wx.showToast({
+var showBusy = text => tt.showToast({
   title: text,
   icon: 'loading',
   duration: 10000
 })
 
 // 显示成功提示
-var showSuccess = text => wx.showToast({
+var showSuccess = text => tt.showToast({
   title: text,
   icon: 'success'
 })
 
 // 显示失败提示
 var showModel = (title, content) => {
-  wx.hideToast();
+  tt.hideToast();
 
-  wx.showModal({
+  tt.showModal({
     title,
     content,
     showCancel: false
