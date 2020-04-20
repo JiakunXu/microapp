@@ -55,13 +55,16 @@ Page({
 
     const that = this;
     sdk.request({
-      url: config.service.baseUrl + '/api/deliveryOrder/list',
+      url: config.service.baseUrl + '/api/list',
       data: {
         ...data,
         pageNo: this.data.pageNo,
         pageSize: this.data.pageSize
       },
       success(result) {
+        result.data.code = "10000";
+        result.data.list = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+
         wx.stopPullDownRefresh();
 
         if (result.data.code == "10000") {

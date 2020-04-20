@@ -1,6 +1,7 @@
 {
   "enablePullDownRefresh": true,
   "usingComponents": {
-    "van-list": "/components/van-list/index"
+    "van-list": "/components/van-list/index",
+    "van-cell": "/vendor/@vant/weapp/cell/index"
   }
 }
