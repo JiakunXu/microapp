@@ -68,9 +68,9 @@ var Session = require('./session');
  * 微信登录，获取 code 和 encryptData
  */
 function getWxLoginResult (cb) {
-    wx.login({
+    tt.login({
         success (loginResult) {
-            wx.getUserInfo({
+            tt.getUserInfo({
                 success (userResult) {
                     cb(null, {
                         code: loginResult.code,
@@ -130,7 +130,7 @@ function login (opts) {
         }
 
         // 请求服务器登录地址，获得会话信息
-        wx.request({
+        tt.request({
             url: opts.loginUrl,
             header: header,
             method: opts.method,
@@ -179,7 +179,7 @@ function loginWithCode (opts) {
         return opts.fail(new Error('登录错误：缺少登录地址，请通过 setLoginUrl() 方法设置登录地址'))
     }
 
-    wx.login({
+    tt.login({
         success (loginResult) {
             // 构造请求头，包含 code、encryptedData 和 iv
             const header = {
@@ -187,7 +187,7 @@ function loginWithCode (opts) {
             }
     
             // 请求服务器登录地址，获得会话信息
-            wx.request({
+            tt.request({
                 url: opts.loginUrl,
                 header: header,
                 method: opts.method,
@@ -230,15 +230,15 @@ var SESSION_KEY = 'weapp_session_' + constants.WX_SESSION_MAGIC_ID;
 
 var Session = {
     get: function () {
-        return wx.getStorageSync(SESSION_KEY) || null;
+        return tt.getStorageSync(SESSION_KEY) || null;
     },
 
     set: function (session) {
-        wx.setStorageSync(SESSION_KEY, session);
+        tt.setStorageSync(SESSION_KEY, session);
     },
 
     clear: function () {
-        wx.removeStorageSync(SESSION_KEY);
+        tt.removeStorageSync(SESSION_KEY);
     },
 };
 
@@ -327,7 +327,7 @@ function request(options) {
             authHeader = buildAuthHeader(session.skey);
         }
 
-        wx.request(utils.extend({}, options, {
+        tt.request(utils.extend({}, options, {
             header: utils.extend({}, originHeader, authHeader),
 
             success: function (response) {
@@ -578,7 +578,7 @@ function Tunnel(serviceUrl) {
             onError: handleSocketError,
         });
 
-        wx.connectSocket({ url: url });
+        tt.connectSocket({ url: url });
         isFirstConnection = false;
     }
 
