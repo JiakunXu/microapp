@@ -13,17 +13,21 @@
   },
   "tabBar": {
     "color": "",
-    "selectedColor": "",
+    "selectedColor": "#333999",
     "backgroundColor": "",
-    "borderStyle": "",
+    "borderStyle": "white",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页"
+        "text": "首页",
+        "iconPath": "assets/tabbar/home.png",
+        "selectedIconPath": "assets/tabbar/home-selected.png"
       },
       {
         "pagePath": "pages/my/index/index",
-        "text": "我的"
+        "text": "我的",
+        "iconPath": "assets/tabbar/my.png",
+        "selectedIconPath": "assets/tabbar/my-selected.png"
       }
     ]
   }
