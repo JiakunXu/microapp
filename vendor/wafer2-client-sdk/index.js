@@ -938,10 +938,10 @@ function listen(listener) {
 
 /* istanbul ignore next */
 function bind() {
-    wx.onSocketOpen(result => onOpen(result));
-    wx.onSocketClose(result => onClose(result));
-    wx.onSocketMessage(result => onMessage(result));
-    wx.onSocketError(error => onError(error));
+    // wx.onSocketOpen(result => onOpen(result));
+    // wx.onSocketClose(result => onClose(result));
+    // wx.onSocketMessage(result => onMessage(result));
+    // wx.onSocketError(error => onError(error));
 }
 
 listen(null);
