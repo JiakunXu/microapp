@@ -1,2 +1,8 @@
 <!-- pages/my/index/index.ttml -->
-<text>pages/my/index/index.ttml</text>
+<view class="container">
+	<van-cell-group title="个人资料">
+		<van-cell custom-class="van-cell van-cell--center van-cell--clickable" title="我的信息" value="去维护" center url="/pages/my/info/info" is-link />
+	</van-cell-group>
+	
+	<view class="van-ellipsis">这是一段宽度限制 250px 的文字，后面的内容会省略</view>
+</view>
