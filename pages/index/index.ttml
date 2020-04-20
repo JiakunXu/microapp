@@ -1,1 +1,7 @@
-<view class="intro">Welcome to Mini Program</view>
+<view class="container">
+	<van-list loading="{{ loading }}" finished="{{ finished }}">
+		<block tt:for="{{ list }}" tt:for-item="item" tt:key="id">
+
+		</block>
+	</van-list>
+</view>
