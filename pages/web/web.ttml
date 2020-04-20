@@ -1,0 +1,2 @@
+<!-- pages/web/web.ttml -->
+<web-view src="{{ src }}"></web-view>
