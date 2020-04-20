@@ -9,23 +9,16 @@ Page({
     userInfo: {}
   },
   onLoad: function () {
-    this.getUserInfo();
-  },
-
-  getUserInfo: function (e) {
-    const that = this;
-    sdk.login({
-      method: "POST",
-      success: res => {
-        app.globalData.userInfo = res;
-
-        that.setData({
-          userInfo: res
+    if (app.globalData.userInfo) {
+      this.setData({
+        userInfo: app.globalData.userInfo,
+      })
+    } else {
+      app.userInfoReadyCallback = res => {
+        this.setData({
+          userInfo: res.userInfo
         })
-      },
-      fail: err => {
-        util.showModel('温馨提示', err.message)
       }
-    })
+    }
   }
 })
