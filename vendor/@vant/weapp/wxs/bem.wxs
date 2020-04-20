@@ -24,7 +24,11 @@ function traversing(mods, conf) {
     });
   } else if (typeof conf === 'object') {
     object.keys(conf).forEach(function(key) {
-      conf[key] && mods.push(key);
+      // conf[key] && mods.push(key);
+      if ("center" == key && conf["center"]) mods.push(key);
+      if ("required" == key && conf["required"]) mods.push(key);
+      if ("borderless" == key && conf["borderless"]) mods.push(key);
+      if ("clickable" == key && conf["clickable"]) mods.push(key);
     });
   }
 }
