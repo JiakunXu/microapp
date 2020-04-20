@@ -1,2 +1,8 @@
 <!-- components/van-list/index.ttml -->
-<text>components/van-list/index.ttml</text>
+<view class="container">
+	<slot></slot>
+	<view tt:if="{{ loading || false }}" class="loading">
+		<van-loading size="16">{{ loadingText || '加载中...' }}</van-loading>
+	</view>
+	<view tt:if="{{ finished || false }}" class="finished-text">{{ finishedText || '没有更多了' }}</view>
+</view>

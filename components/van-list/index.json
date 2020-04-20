@@ -1,4 +1,6 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "van-loading": "/vendor/@vant/weapp/loading/index"
+  }
 }

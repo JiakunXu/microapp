@@ -1,1 +1,13 @@
 /* components/van-list/index.ttss */
+
+.loading, .finished-text, .error-text {
+  color: #969799;
+  font-size: 14px;
+  line-height: 50px;
+  text-align: center;
+}
+
+.placeholder {
+  height: 0;
+  pointer-events: none;
+}
