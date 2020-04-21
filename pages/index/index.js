@@ -40,6 +40,26 @@ Page({
   onReachBottom: function () {
     this.load();
   },
+  onShareAppMessage: function (shareOption) {
+    switch (shareOption.channel) {
+      case 'video':
+        return {
+          extra: {
+            // 注意，只有小程序使用button组件触发分享时，会有target属性
+            videoPath: shareOption.target.dataset.path
+          }
+        };
+      case 'qrcode':
+        break;
+      default:
+        return {
+          channel: "share",
+          title: "标题123",
+          imageUrl: "",
+          path: ""
+        };
+    }
+  },
 
   load: function () {
     this._list({});

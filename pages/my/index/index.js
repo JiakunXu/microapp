@@ -47,5 +47,17 @@ Page({
         util.showModel('温馨提示', err.message)
       }
     })
+  },
+  onClick: function () {
+    tt.chooseAddress({
+      success(res) {
+        console.log(res.userName);
+        console.log(res.provinceName);
+        console.log(res.cityName);
+        console.log(res.countyName);
+        console.log(res.detailInfo);
+        console.log(res.telNumber);
+      }
+    });
   }
 })
