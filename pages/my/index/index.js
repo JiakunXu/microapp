@@ -76,5 +76,26 @@ Page({
         console.log(`scanCode调用失败`);
       }
     });
+  },
+  onClick2: function () {
+    tt.showLoading({
+      title: "请求中，请稍后...",
+      success(res) {
+        console.log(`${res}`);
+      },
+      fail(res) {
+        console.log(`showLoading调用失败`);
+      }
+    });
+  },
+  onClick3: function () {
+    tt.showInteractionBar({
+      success(res) {
+        console.log(`${res}`);
+      },
+      fail(res) {
+        console.log(`showInteractionBar 调用失败`);
+      }
+    });
   }
 })

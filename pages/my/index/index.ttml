@@ -7,5 +7,7 @@
 
 	<van-cell-group title="更多">
 		<van-cell title="扫一扫" center is-link bind:click="onClick1" />
+		<van-cell title="保存中" center is-link bind:click="onClick2" />
+		<van-cell title="互动中" center is-link bind:click="onClick3" />
 	</van-cell-group>
 </view>

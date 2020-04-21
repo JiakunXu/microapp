@@ -29,6 +29,7 @@ Page({
 
     this.load();
     this.showFavoriteGuide();
+    this.setTabBarBadge();
   },
   onPullDownRefresh: function () {
     this.setData({
@@ -132,6 +133,12 @@ Page({
       fail(res) {
         console.log("引导组件展示失败");
       }
+    });
+  },
+  setTabBarBadge: function () {
+    tt.setTabBarBadge({
+      index: 1,
+      text: "13"
     });
   }
 })
