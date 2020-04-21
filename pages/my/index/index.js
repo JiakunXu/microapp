@@ -11,7 +11,14 @@ Page({
     userInfo: {}
   },
   onLoad: function (options) {
-    tt.hideShareMenu();
+    tt.hideShareMenu({
+      success(res) {
+        console.log(`hideShareMenu 调用成功`);
+      },
+      fail(res) {
+        console.log(`hideShareMenu 调用失败`);
+      }
+    });
 
     if (app.globalData.userInfo) {
       this.setData({
@@ -48,7 +55,7 @@ Page({
       }
     })
   },
-  onClick: function () {
+  onClick0: function () {
     tt.chooseAddress({
       success(res) {
         console.log(res.userName);
@@ -57,6 +64,16 @@ Page({
         console.log(res.countyName);
         console.log(res.detailInfo);
         console.log(res.telNumber);
+      }
+    });
+  },
+  onClick1: function () {
+    tt.scanCode({
+      success(res) {
+        console.log(`${res.result}`);
+      },
+      fail(res) {
+        console.log(`scanCode调用失败`);
       }
     });
   }

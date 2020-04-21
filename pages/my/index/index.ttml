@@ -2,6 +2,10 @@
 <view class="container">
 	<van-cell-group title="个人资料">
 		<van-cell title="我的信息" value="去维护" center url="/pages/my/info/info" is-link />
-		<van-cell title="收货信息" value="去维护" center is-link bind:click="onClick" />
+		<van-cell title="收货信息" center is-link bind:click="onClick0" />
+	</van-cell-group>
+
+	<van-cell-group title="更多">
+		<van-cell title="扫一扫" center is-link bind:click="onClick1" />
 	</van-cell-group>
 </view>
