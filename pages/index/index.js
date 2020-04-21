@@ -28,6 +28,7 @@ Page({
     }
 
     this.load();
+    this.showFavoriteGuide();
   },
   onPullDownRefresh: function () {
     this.setData({
@@ -119,5 +120,18 @@ Page({
     tt.navigateTo({
       url: '/pages/web/web?src=' + encodeURIComponent("https://baidu.com/s?wd=" + id)
     })
+  },
+  showFavoriteGuide: function () {
+    tt.showFavoriteGuide({
+      type: "bar",
+      content: "一键添加到我的小程序",
+      position: "bottom",
+      success(res) {
+        console.log("引导组件展示成功");
+      },
+      fail(res) {
+        console.log("引导组件展示失败");
+      }
+    });
   }
 })
