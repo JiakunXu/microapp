@@ -1,3 +1,1 @@
 /* pages/my/index/index.ttss */
-@import "/vendor/@vant/weapp/cell/index.wxss";
-@import "/vendor/@vant/weapp/cell-group/index.wxss"
